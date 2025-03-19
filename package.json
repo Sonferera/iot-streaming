@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sonferera/signaling-server.git"
+    "url": "git+https://github.com/Sonferera/iot-streaming.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sonferera/signaling-server/issues"
+    "url": "https://github.com/Sonferera/iot-streaming/issues"
   },
-  "homepage": "https://github.com/Sonferera/signaling-server#readme",
+  "homepage": "https://github.com/Sonferera/iot-streaming#readme",
   "description": ""
 }
