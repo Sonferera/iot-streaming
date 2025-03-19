@@ -1,39 +1,33 @@
-const express = require("express");
-const http = require("http");
-const socketIo = require("socket.io");
-const cors = require("cors");
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
 
 const app = express();
-app.use(cors());
-
 const server = http.createServer(app);
-const io = socketIo(server, {
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-    }
-});
+const io = socketIo(server);
 
-io.on("connection", (socket) => {
-    console.log("User connected:", socket.id);
+app.use(express.static('public'));
 
-    socket.on("offer", (data) => {
-        socket.broadcast.emit("offer", data);
+io.on('connection', (socket) => {
+    console.log('a user connected');
+
+    socket.on('offer', (offer) => {
+        socket.broadcast.emit('offer', offer);
     });
 
-    socket.on("answer", (data) => {
-        socket.broadcast.emit("answer", data);
+    socket.on('answer', (answer) => {
+        socket.broadcast.emit('answer', answer);
     });
 
-    socket.on("candidate", (data) => {
-        socket.broadcast.emit("candidate", data);
+    socket.on('candidate', (candidate) => {
+        socket.broadcast.emit('candidate', candidate);
     });
 
-    socket.on("disconnect", () => {
-        console.log("User disconnected:", socket.id);
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
     });
 });
 
 server.listen(3000, () => {
-    console.log("Signaling server running on port 3000");
+    console.log('Server is running on http://localhost:3000');
 });
