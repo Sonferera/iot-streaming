@@ -10,12 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/Sonferera/iot-streaming.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "webrtc",
+    "streaming",
+    "iot"
+  ],
+  "author": "Nama Anda",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sonferera/iot-streaming/issues"
   },
   "homepage": "https://github.com/Sonferera/iot-streaming#readme",
-  "description": ""
+  "description": "Proyek streaming dari HP ke laptop menggunakan WebRTC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
 }

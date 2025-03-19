@@ -8,7 +8,7 @@ let peerConnection;
 
 const configuration = {
     iceServers: [
-        { urls: 'stun:stun.l.google.com:19302' } // STUN server gratis dari Google
+        { urls: 'stun:stun.l.google.com:19302' } // STUN server gratis
     ]
 };
 
